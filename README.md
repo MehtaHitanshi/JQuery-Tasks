@@ -115,33 +115,40 @@
 ## _Wizard 3: Personalization_
 - It contains form fields which are listed below.
 
-1. Company Name - Must be not empty
-                - Length between 2 - 20
-                - Doesn’t contain any
-                - special character except “.”
+1. Company Name : 
+- Must be not empty
+- Length between 2 - 20
+- Doesn’t contain any
+- special character except “.”
 
-2. Logo -Enter Font Awesome 4 Logo Class (Like, fa-coffee) Refer: https://fontawesome.com/v4/icons/ 
-        - Must be not empty
-        - Length between 2-20
-        - Doesn’t contain any
-        - special character except “-”
+2. Logo :
+- Enter Font Awesome 4 Logo Class (Like, fa-coffee) Refer: https://fontawesome.com/v4/icons/ 
+- Must be not empty
+- Length between 2-20
+- Doesn’t contain any
+- special character except “-”
 
-3. Website - Must be not empty
-           - Valid URL
+3. Website :
+- Must be not empty
+- Valid URL
 
-4. Full Name - Must be not empty
-             - Length between 2 - 20
-             - Doesn’t contain any special character
+4. Full Name :
+- Must be not empty
+- Length between 2 - 20
+- Doesn’t contain any special character
 
-5. Designation - Must be not empty
-               - Length between 2 - 20
-               - Doesn’t contain any special character
+5. Designation :
+- Must be not empty
+- Length between 2 - 20
+- Doesn’t contain any special character
 
-6. Contact Number - Must be not empty
-                  - Valid Contact Number (10 Digits)
+6. Contact Number :
+- Must be not empty
+- Valid Contact Number (10 Digits)
 
-7. Email Address - Must be not empty
-                 - Valid Email Address
+7. Email Address :
+- Must be not empty
+- Valid Email Address
 
 ## _Display Area:_
 ## Front and Back:
