@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Card Maker</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./js/jQuery.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="./js/jquery.validate.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+</head>
+
+<body>
+    <div class="main clearfix">
+        <div class="wizardArea clearfix">
+
+            <div class="tabsDiv">
+                <button type="button" class="tab">Template</button>
+                <button type="button" class="tab">Theme</button>
+                <button type="button" class="tab">Personalization</button>
+            </div>
+            <div class="wiz">
+                <div class="tabContent">
+                    <h1>Select one template :</h1><br><br>
+                    <input type="radio" name="clean" id="clean">
+                    <label for="clean">Clean</label><br>
+                    <input type="radio" name="clean" id="standard">
+                    <label for="standard">Standard</label>
+                </div>
+
+                <div class="tabContent">
+                    <div class="colorPicker">
+                        <h1>Create your own theme :</h1><br><br>
+                        <label for="primaryColor">Primary color (Choose Dark Color) :</label>
+                        <input type="color" name="primaryColor" id="primaryColor" value="#ff0000"><br><br>
+                        <label for="secondaryColor">Secondary color (Choose Light Color) :</label>
+                        <input type="color" name="" id="secondaryColor"><br><br>
+                        <label for="tertiaryColor">Tertiary color (Choose Extreme Light Color) :</label>
+                        <input type="color" name="tertiaryColor" id="tertiaryColor"><br><br>
+                        <button type="button" class="colorResetBtn">Reset</button>
+                    </div>
+                </div>
+
+                <div class="tabContent">
+                    <form id="customDetails">
+                        <label for="companyName" name="companyName">Company Name :</label>
+                        <input type="text" name="companyName" id="companyName"
+                            placeholder="Enter Name of Company"><br><br>
+
+                        <label for="logo" class="labelLogo" name="logo">Logo :</label>
+                        <input type="text" name="logo" id="logo" placeholder="Enter Font Awesome 4 Logo
+                    Class (Like, fa-coffee)"><a href="https://fontawesome.com/v4/icons/"
+                            target="parent">Reference</a><br><br>
+
+                        <label for="website" class="labelWeb" name="website">Website :</label>
+                        <input type="text" name="website" id="website" placeholder="Enter Website URL"><br><br>
+
+                        <label for="fullName" class="labelFname" name="fullName">Full Name :</label>
+                        <input type="text" name="fullName" id="fullName" placeholder="Enter Full Name"><br><br>
+
+                        <label for="designation" class="labelDesignation" name="designation">Designation :</label>
+                        <input type="text" name="designation" id="designation" placeholder="Enter Designation"><br><br>
+
+                        <label for="contactNumber" name="contactNumber">Contact Number :</label>
+                        <input type="number" name="contactNumber" id="contactNumber"
+                            placeholder="Enter Contact Number"><br><br>
+
+                        <label for="emailAddress" class="labelEmail" name="emailAddress">Email Address :</label>
+                        <input type="email" name="emailAddress" id="emailAddress"
+                            placeholder="Enter Email Address"><br><br>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="displayArea clearfix">
+            <div class="cleanArea">
+                <div class="front">
+                    <h2>Front :</h2>
+                    <div class="frontCard clearfix">
+                        <div class="companyName">
+                            <div class="companyLogo">
+                                <i class="fa fa-bolt" aria-hidden="true"></i>
+                            </div>
+                            <div class="nameOfCompany">
+                                <h2>Company <br>Name</h2>
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                        <div class="companyDetails">
+                            <div class="name">
+                                <label class="fullnm">Full Name Here</label><br>
+                                <label class="deg">Your Designation</label>
+                            </div>
+                            <div class="info">
+                                <div class="phone">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                    <label for="number">+123 456 7890</label>
+                                </div>
+                                <div class="mail">
+                                    <i class="fa fa-envelope-open" aria-hidden="true"></i>
+                                    <label for="mail">example@gmail.com</label>
+                                </div>
+                                <div class="web">
+                                    <i class="fa fa-link" aria-hidden="true"></i>
+                                    <label for="web">www.example.com</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="back">
+                    <h2>Back :</h2>
+                    <div class="backCard">
+                        <div class="scan">
+                            <img src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0"
+                                class="qr-code img-thumbnail img-responsive" />
+                        </div>
+                        <p class="generate" id="generate">Scan Me</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="standardArea clearfix">
+                <h2>Front :</h2>
+                <div class="stdFront clearfix">
+                    <div class="standardFront">
+                        <div class="comName">
+                            <h2>Company Name</h2>
+                        </div>
+                        <div class="scanStd">
+                            <img src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0"
+                                class="qr-code img-thumbnail img-responsive" />
+                        </div>
+                    </div>
+                    <div class="stdDetail">
+                        <i class="fa fa-snowflake" aria-hidden="true"></i>
+                        <i class="fa fa-snowflake iconTwo" aria-hidden="true"></i>
+                        <i class="fa fa-snowflake pb" aria-hidden="true"></i>
+                    </div>
+                    <div class="bottom"></div>
+                </div>
+
+                <div class="stdBack">
+                    <h2>Back :</h2>
+                    <div class="backstd">
+                        <div class="backcrd">
+                            <div class="stdLogo">
+                                <i class="fa fa-bolt" aria-hidden="true"></i>
+                            </div>
+                            <div class="name2">
+                                <label class="fullnm">Full Name Here</label><br><br>
+                                <label class="deg">TO CONTACT :</label><br><br>
+                            </div>
+                            <div class="info2">
+                                <div class="phone">
+                                    <label for="mobile">Mobile :</label>
+                                    <label for="number" class="number">+123 456 7890</label>
+                                </div>
+                                <div class="mail">
+                                    <label for="gmail">Email :</label>
+                                    <label for="mail" class="mails">example@gmail.com</label>
+                                </div>
+                                <div class="web">
+                                    <label for="wsite">Website</label>
+                                    <label for="web" class="webb">www.example.com</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bacck">
+                            <i class="fa fa-snowflake" aria-hidden="true"></i>
+                            <i class="fa fa-snowflake iconTwo" aria-hidden="true"></i>
+                            <i class="fa fa-snowflake" aria-hidden="true"></i>
+                        </div>
+                        <div class="bottom2"></div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="btns clearfix">
+                <button type="button" class="downloadBtn">Download</button>
+                <button type="button" class="resetBtn">Reset</button>
+            </div>
+        </div>
+
+
+
+</body>
+
+</html>

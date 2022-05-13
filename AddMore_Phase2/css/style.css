@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+}
+
+html{
+    background-color: white !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix:before, .clearfix:after {
+    content: '';
+    width: 100%;
+    display: table;
+}
+.screen {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1170px;
+}
+.parent{
+    padding-top: 50px;
+}
+.addSections{
+    float: left;
+    width: 50%;
+}
+.specification{
+    float: right;
+    width: 50%;
+}
+.addMorebtn{
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid;
+    margin-top: 30px;
+    color: white;
+    background-color: rgb(25, 161, 25);
+    font-weight: 600;
+    font-size: 14px;
+}
+.inputSection{
+    margin-top: 30px;
+    border: 1px solid black;
+    padding: 20px;
+}
+.addChildBtn, .submitBtn, .deleteBtn, .childDeleteBtn{
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+.addChildBtn{
+    background-color: rgb(46, 41, 41);
+}
+.submitBtn{
+    background-color: rgb(25, 161, 25);
+}
+.deleteBtn, .childDeleteBtn{
+    background-color: rgb(211, 35, 35);
+}
+.addChild{
+    border: 1px solid yellow;
+    padding: 5px;
+    margin-top: 8px;
+}
+.specTable{
+    padding-left: 20px;
+}
+table,tr,td,th{
+    border: 1px solid;
+    border-collapse: collapse;
+}
+td{
+    padding-right: 50px;
+}
+th{
+    text-align: left;
+}
+table{
+    margin-top: 20px;
+    width: 100%;
+}

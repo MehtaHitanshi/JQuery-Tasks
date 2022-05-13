@@ -1,0 +1,146 @@
+h1,
+.tabs,
+.wizard_form {
+    text-align: center;
+}
+
+.tab1 {
+    margin: 15px;
+    border-radius: 10px;
+    border: 0;
+    padding: 10px 20px;
+}
+
+.btns .prev,
+.btns .save,
+.btns .update,
+.btns .cancel,
+.btns .sub {
+    background: cornflowerblue;
+    color: white;
+    border: 1px solid;
+    border-radius: 5px;
+    margin-top: 40px;
+}
+
+input[type], select {
+    margin: 15px 0;
+    padding: 10px;
+    width: 20%;
+}
+textarea{
+    width: 20%;
+    /* margin: 5px; */
+    padding: 10px 0px 10px 6px;
+}
+input[type="radio"], input[type="checkbox"] {
+    width: auto;
+}
+input[type="button"], input[type="submit"]{
+    width: auto;
+    padding: 15px;
+}
+
+#hours {
+    width: 16%;
+    margin: 20px 0 0 0;
+}
+
+#myform {
+    padding: 30px;
+    margin: 30px;
+    position: relative;
+}
+
+#form_data,
+#form_data th,
+#form_data tr,
+#form_data td {
+    border-collapse: collapse;
+}
+
+th {
+    padding: 15px;
+}
+
+.data table {
+    margin: 0 auto;
+}
+
+select,
+#term {
+    margin: 20px 0;
+}
+
+.ui-datepicker-calendar thead {
+    background-color: cornflowerblue;
+    color: white;
+}
+
+.ui-datepicker-calendar {
+    background-color: white;
+    border: 1px solid;
+}
+
+.ui-datepicker-month,
+.ui-datepicker-year {
+    margin: 0;
+    background: cornflowerblue;
+    color: white;
+    width: 50%;
+    border: 0;
+    padding: 5px 0;
+}
+
+.ui-datepicker-calendar td {
+    border: 0px;
+    border-collapse: inherit;
+}
+
+.ui-datepicker-calendar td a {
+    text-decoration: none;
+    color: black;
+}
+
+.ui-datepicker-calendar td span {
+    color: grey;
+}
+
+.ui-datepicker-header span {
+    display: none;
+}
+
+#gender-error {
+    position: absolute;
+    left: 56%;
+    bottom: 42%;
+}
+
+label.error {
+    color: red;
+}
+
+input.error, textarea.error, select.error {
+    border: 1px solid red;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#form_data tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#form_data .table_content tr:hover {
+    background-color: #ddd;
+}
+
+#form_data th {
+    background-color: cornflowerblue;
+    color: white;
+}
+label.email_label,label.ip_label{
+    margin-right: 17px;
+}
+label.money_label,label.zip_label{
+    margin-right: 30px;
+}

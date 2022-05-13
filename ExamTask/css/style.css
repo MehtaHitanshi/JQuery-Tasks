@@ -1,0 +1,46 @@
+.clearfix::before, .clearfix::after{
+    content: '';
+    display: table;
+    width: 100%;
+}
+.parent h1{
+    letter-spacing: 3px;
+    text-align: center;
+    padding-top: 50px;
+    color: grey;
+}
+.parent{
+    width: 100%;
+}
+.left{
+    float: left;
+    width: 50%;
+    padding-top: 70px;
+    text-align: center;
+}
+.right{
+    float: right;
+    width: 50%;
+    padding-top: 50px;
+}
+input[type=text]{
+    padding: 10px;
+    margin-left: 28px;
+}
+.dropDownParent,.dropDownChild{
+    padding: 10px 107px 13px 0;
+    margin-top: 16px;
+}
+.addBtn, .updateBtn,.editBtn,.removeBtn{
+    background: white;
+    border: 1px solid black;
+    padding: 11px;
+    border-radius: 4px;
+}
+.addBtn:hover,.updateBtn:hover,.editBtn:hover,.removeBtn:hover{
+    background-color:black;
+    color: white;
+}
+.btn{
+    display: inline-block;
+}

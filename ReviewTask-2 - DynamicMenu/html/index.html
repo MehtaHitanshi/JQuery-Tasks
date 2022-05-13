@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Menu</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="both-parts w100 clearfix">
+            <h1>Dynamic Menu Creation</h1>
+            <div class="left-part w30 fl">
+                <input type="text" name="inputValue" id="inputValue">
+                <button type="button" id="add">Add</button>
+                <button type="button" class="update">Update</button>
+                <div id="all-dropdown">
+                    <select class="parent-dropdown">
+                        <option value="none" class="">select-child</option>
+                    </select>
+                </div>
+            </div>
+            <div class="right-part w70 fl">
+                <div id="menu-list">
+                    <ul class="ulClass"></ul>  
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

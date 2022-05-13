@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("input").focus(function(){
+      console.log("run input");
+    $("input").after(" Text marked!");
+  });
+  $("button").click(function(){
+    console.log("run click button");
+    $("input").trigger("focus");
+  });
+});
+</script>
+</head>
+<body>
+
+<input type="text" value="Hello World"><br><br>
+
+<button>Trigger the select event for the input field</button>
+
+</body>
+</html>

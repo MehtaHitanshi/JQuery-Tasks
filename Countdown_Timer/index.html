@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountDown Timer</title>
+    <style>
+        table,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+            margin: 0 auto;
+        }
+
+        input[type="number"] {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .main {
+            text-align: center;
+        }
+
+        .status,
+        .btn,
+        input[type="button"] {
+            margin-top: 20px;
+        }
+
+        .start,
+        .resume,
+        .restart {
+            border: 1px solid green;
+            color: green;
+            background-color: white;
+        }
+
+        .pause {
+            border: 1px solid blue;
+            color: blue;
+            background-color: white;
+        }
+
+        .stop {
+            border: 1px solid red;
+            color: red;
+            background-color: white;
+        }
+
+        .reset {
+            border: 1px solid black;
+            color: black;
+            background-color: white;
+        }
+
+        .status {
+            padding: 15px;
+            border: 1px solid grey;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+    </style>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            var timer;
+            $('.resume, .restart').hide();
+
+            function countdown_timer(h, m, s, c) {
+                timer = setInterval(function () {
+                    if (c > 0) {
+                        c--;
+                    } else {
+                        c = 99;
+                        if (s > 0) {
+                            s--;
+                        } else {
+                            s = 59;
+                            if (m > 0) {
+                                m--;
+                            } else {
+                                m = 59
+                                if (h > 0) {
+                                    h--;
+                                } else {
+                                    h = 0, m = 0, s = 0, c = 0;
+                                }
+                            }
+                        }
+                    }
+                    if (h == 0 && s == 0 && c == 0 && m == 0)
+                        clearInterval(timer);
+
+                    $(".hours").text(h);
+                    $(".minutes").text(m);
+                    $(".seconds").text(s);
+                    $(".c_sec").text(c);
+                }, 10);
+            }
+
+            //Start
+            $('.start').click(function () {
+                $('.start').prop('disabled', true);
+
+                var h, m, s, c = 0;
+                var inputValue = $('#time').val();
+
+                h = Math.floor(inputValue / 3600);
+                m = Math.floor((inputValue - (h * 3600)) / 60);
+                s = Math.floor((inputValue - (h * 3600) - (m * 60)));
+                c = 0;
+
+                $(".hours").text(h);
+                $(".minutes").text(m);
+                $(".seconds").text(s);
+                $(".c_sec").text(c);
+
+                countdown_timer(h, m, s, c);
+
+                $('.status').text('RUNNING...').css({ "border": "1px solid green", "color": "green" });
+
+            });
+
+            //Reset
+            $('.reset').click(function () {
+                h = 0, m = 0, c = 0, s = 0;
+                $('.start').prop('disabled', false);
+
+                $(".hours").text(h);
+                $(".minutes").text(m);
+                $(".seconds").text(s);
+                $(".c_sec").text(c);
+                clearInterval(timer);
+
+                $('.status').text('ENTER TIME & HIT START...!').css({ "border": "1px solid black", "color": "black" });
+                $('.restart, .resume').hide();
+                $('.start').show();
+            });
+
+            //Pause
+            $('.pause').click(function () {
+                clearInterval(timer);
+                $('.start, .restart').hide();
+                $('.resume').show();
+                
+                h = $(".hours").text();
+                m = $(".minutes").text();
+                s = $(".seconds").text();
+                c = $(".c_sec").text();
+
+                $('.status').text('PAUSED AT ' + h + 'hh, ' + m + 'mm, ' + s + 'ss.').css({ "border": "1px solid blue", "color": "blue" });
+            });
+
+            //Stop
+            $('.stop').click(function () {
+                clearInterval(timer);
+                $('.restart').show();
+                $('.resume, .start').hide();
+
+                $('.status').text('STOPPED...').css({ "border": "1px solid red", "color": "red" });
+            });
+
+            //Resume
+            $('.resume').click(function () {
+                $('.resume').hide();
+                $('.start').show();
+
+                countdown_timer(h, m, s, c);
+
+                $('.status').text('RESUMED...').css({ "border": "1px solid green", "color": "green" });
+            });
+
+            //Restart
+            $('.restart').click(function () {
+                var inputValue = $('#time').val();
+                var h, m, s, c = 0;
+                
+                h = Math.floor(inputValue / 3600);
+                m = Math.floor((inputValue - (h * 3600)) / 60);
+                s = Math.floor((inputValue - (h * 3600) - (m * 60)));
+                c = 0;
+
+                $(".hours").text(h);
+                $(".minutes").text(m);
+                $(".seconds").text(s);
+                $(".c_sec").text(c);
+
+                $('.restart').hide();
+                $(".start").show();
+
+                countdown_timer(h, m, s, c);
+
+                $('.status').text('RESTART...').css({ "border": "1px solid green", "color": "green" });
+
+            });
+        });
+    </script>
+
+</head>
+
+
+<body>
+    <div class="main">
+        <h1>COUNTDOWN</h1>
+
+        <div class="counter">
+            <table>
+                <tr>
+                    <td class="hours">00</td>
+                    <td class="minutes">00</td>
+                    <td class="seconds">00</td>
+                    <td class="c_sec">00</td>
+                </tr>
+                <tr>
+                    <td>Hours</td>
+                    <td>Minutes</td>
+                    <td>Seconds</td>
+                    <td>C-seconds</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="btn">
+            <form>
+                <input type="number" placeholder="Enter time in seconds..." id="time">
+                <input type="button" value="START" class="start">
+                <input type="button" value="RESTART" class="restart">
+                <input type="button" value="RESUME" class="resume">
+                <input type="button" value="PAUSE" class="pause">
+                <input type="button" value="STOP" class="stop">
+                <input type="reset" value="RESET" class="reset">
+            </form>
+        </div>
+
+        <div class="status">ENTER TIME & HIT START...!</div>
+    </div>
+</body>
+
+</html>

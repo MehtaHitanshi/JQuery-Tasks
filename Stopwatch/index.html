@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopWatch</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <style>
+        table,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+            margin: 0 auto;
+        }
+
+        input[type="number"] {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .main {
+            text-align: center;
+        }
+
+        .status,
+        .paused,
+        .stopped,
+        .btn,
+        input[type="button"] {
+            margin-top: 20px;
+        }
+
+        .start,
+        .resume,
+        .restart {
+            border: 1px solid green;
+            color: green;
+            background-color: white;
+        }
+
+        .pause {
+            border: 1px solid blue;
+            color: blue;
+            background-color: white;
+        }
+
+        .stop {
+            border: 1px solid red;
+            color: red;
+            background-color: white;
+        }
+
+        .reset {
+            border: 1px solid black;
+            color: black;
+            background-color: white;
+        }
+
+        .logcolor {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px;
+        }
+
+        .status {
+            padding: 15px;
+            border: 1px solid grey;
+            margin-bottom: 15px;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            var timer;
+            $('.resume, .restart').hide();
+
+            function stopwatch(h,m,s,c) {
+                timer = setInterval(function () {
+                    if (c < 99) {
+                        c++;
+                    } else {
+                        c = 0;
+                        if (s < 59) {
+                            s++;
+                        } else {
+                            s = 0;
+                            if (m < 59) {
+                                m++;
+                            } else {
+                                m = 0;
+                                if (h < 24) {
+                                    h++;
+                                }
+                            }
+                        }
+                    }
+                    $(".hours").text(h);
+                    $(".minutes").text(m);
+                    $(".seconds").text(s);
+                    $(".c_sec").text(c);
+                }, 10);
+            }
+
+            //start
+            $('.start').click(function () {
+                var h = 0, m = 0, s = 0, c = 0;
+                $('.start').prop('disabled', true);
+
+                $(".hours").text(h);
+                $(".minutes").text(m);
+                $(".seconds").text(s);
+                $(".c_sec").text(c);
+
+                stopwatch(h, m, s, c);
+
+                $('.status').text('RUNNING...').css({ "border": "1px solid green", "color": "green" });
+            });
+
+
+            //Reset
+            $('.reset').click(function () {
+                h = 0, m = 0, c = 0, s = 0;
+                $('.start, .pause, .stop').prop('disabled', false);
+
+                $(".hours").text(h);
+                $(".minutes").text(m);
+                $(".seconds").text(s);
+                $(".c_sec").text(c);
+
+                clearInterval(timer);
+
+                $('.start').show();
+                $('.resume, .restart').hide();
+
+                $('.stopped, .paused, .logcolor').html("").css("border", 0);
+                $('.status').text("HIT START...!").css({ "border": "1px solid black", "color": "black" });
+            });
+
+            //Pause
+            $('.pause').click(function () {
+                clearInterval(timer);
+                $('.pause').prop('disabled', true);
+
+                $('.restart, .start').hide();
+                $('.resume').show();
+
+                h = $(".hours").text();
+                m = $(".minutes").text();
+                s = $(".seconds").text();
+                c = $(".c_sec").text();
+
+                $('.status').text('PAUSED').css({ "border": "1px solid blue", "color": "blue" });
+                $('.paused').append('PAUSED AT ' + h + 'HH, ' + m + 'MM, ' + s + 'SS <br>').css("color", "skyblue");
+                $('.logcolor').html('PAUSED AT ' + h + 'HH, ' + m + 'MM, ' + s + 'SS <br>').css({ "border": "1px solid blue", "color": "blue" });
+
+            });
+
+            //Stop
+            $('.stop').click(function () {
+                clearInterval(timer);
+
+                $('.stop, .pause').prop('disabled', true);
+
+                $('.restart').show();
+                $('.start, .resume').hide();
+
+                h = $(".hours").text();
+                m = $(".minutes").text();
+                s = $(".seconds").text();
+                c = $(".c_sec").text();
+
+                $('.status').text('STOPPED').css({ "border": "1px solid red", "color": "red" });
+                $('.stopped').append('STOPPED AT ' + h + 'HH, ' + m + 'MM, ' + s + 'SS <br>').css("color", "orange");
+                $('.logcolor').html('STOPPED AT ' + h + 'HH, ' + m + 'MM, ' + s + 'SS <br>').css({ "border": "1px solid red", "color": "red" });
+
+            });
+
+            //Resume
+            $('.resume').click(function () {
+                $('.resume').hide();
+                $('.start').show();
+
+                $('.pause').prop('disabled', false);
+
+                stopwatch(h, m, s, c);
+
+                $('.status').text('RESUMED...').css({ "border": "1px solid green", "color": "green" });
+            });
+
+            //Restart
+            $('.restart').click(function () {
+                $('.stop, .pause').prop('disabled', false);
+                var h = 0, m = 0, s = 0, c = 0;
+                
+                $(".hours").text(h);
+                $(".minutes").text(m);
+                $(".seconds").text(s);
+                $(".c_sec").text(c);
+
+                $('.restart').hide();
+                $(".start").show();
+
+                stopwatch(h, m, s, c);
+
+                $('.status').text('RESTART...').css({ "border": "1px solid green", "color": "green" });
+
+            });
+        });
+
+
+    </script>
+</head>
+
+<body>
+
+    <div class="main">
+        <h1>STOPWATCH</h1>
+
+        <div class="counter">
+            <table>
+                <tr>
+                    <td class="hours">00</td>
+                    <td class="minutes">00</td>
+                    <td class="seconds">00</td>
+                    <td class="c_sec">00</td>
+                </tr>
+                <tr>
+                    <td>Hours</td>
+                    <td>Minutes</td>
+                    <td>Seconds</td>
+                    <td>C-seconds</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="btn">
+            <form>
+                <input type="button" value="START" class="start">
+                <input type="button" value="RESTART" class="restart">
+                <input type="button" value="RESUME" class="resume">
+                <input type="button" value="PAUSE" class="pause">
+                <input type="button" value="STOP" class="stop">
+                <input type="reset" value="RESET" class="reset">
+            </form>
+        </div>
+
+        <div class="status">HIT START...!</div>
+        <div class="logcolor"></div>
+        <div class="stopped"></div>
+        <div class="paused"></div>
+    </div>
+</body>
+
+</html>

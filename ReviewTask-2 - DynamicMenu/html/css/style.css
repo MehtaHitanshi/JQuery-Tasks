@@ -1,0 +1,122 @@
+/* Fonts & Icons */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css');
+/* @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css') */
+
+/* Global Declarations */
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.clearfix:before,
+.clearfix:after {
+    width: 100%;
+    display: table;
+    content: '';
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 30px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    margin: 0;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.w30 {
+    width: 30%;
+}
+
+.w70 {
+    width: 70%;
+}
+
+.w100 {
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.inputValue {
+    padding: 6px;
+    width: 60%;
+}
+
+button {
+    padding: 5px 8px;
+    margin: 5px;
+    border: 1px solid grey;
+    background-color: white;
+    border-radius: 5px;
+}
+
+button.add,
+button.update {
+    padding: 8px 20px;
+    margin: 5px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+button:active,
+button:hover {
+    background-color: black;
+    color: white;
+}
+
+.both-parts {
+    /* border: 2px solid black; */
+    padding: 20px;
+}
+
+.left-parts {
+    padding: 10px;
+}
+
+select {
+    padding: 6px;
+    margin: 5px;
+    display: block;
+    width: 35%;
+}
+li{
+    padding: 5px;
+}

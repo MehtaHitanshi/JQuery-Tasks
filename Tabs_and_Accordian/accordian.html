@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-2</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".content").hide().first().show();
+            $('.tab1').first().find("i").removeClass('fa fa-caret-right').addClass('fa fa-caret-down');
+            $(".tab1").click(function () {
+                $(".content").slideUp(function(){
+                    if(!$('.content').is(":visible")){
+                        $(this).parent().find(".tab1 i").removeClass("fa fa-caret-down").addClass("fa fa-caret-right");
+                    }
+                });
+
+                $(this).find("i").removeClass('fa fa-caret-right').addClass('fa fa-caret-down');
+                $(this).parent().siblings().find('.tab1 i').removeClass('fa fa-caret-right').removeClass('fa fa-caret-down').addClass('fa fa-caret-right');
+                $(this).siblings('.content').show();
+            });
+        });
+    </script>
+
+    <style>
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css');
+
+        .tab1 {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: thistle;
+        }
+
+        .content {
+            text-align: center;
+            background-color: #ccc;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tabs">
+        <div class="para">
+            <button class="tab1"><i class="fa fa-caret-right" aria-hidden="true"></i> Button-1</button>
+            <div class="content">Para 1</div>
+        </div>
+
+        <div class="para">
+            <button class="tab1"><i class="fa fa-caret-right" aria-hidden="true"></i> Button-2</button>
+            <div class="content">Para 2</div>
+        </div>
+
+        <div class="para">
+            <button class="tab1"><i class="fa fa-caret-right" aria-hidden="true"></i> Button-3</button>
+            <div class="content">Para 3</div>
+        </div>
+
+        <div class="para">
+            <button class="tab1"><i class="fa fa-caret-right" aria-hidden="true"></i> Button-4</button>
+            <div class="content">Para 4</div>
+        </div>
+    </div>
+</body>
+
+</html>

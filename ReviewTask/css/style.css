@@ -1,0 +1,210 @@
+@import url('https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css');
+.clearfix::before, .clearfix::after{
+    content: '';
+    display: table;
+    width: 100%;
+}
+
+.main{
+    width: 100%;
+}
+.wizardArea{
+    width: 50%;
+    float: left;
+    padding-top: 30px;
+}
+.wiz{
+    border: 1px solid;
+    height: 600px;
+    display: inline-block;
+    width: 60%;
+}
+.tabContent{
+    padding: 30px 0 0 30px;
+}
+.displayArea{
+    width: 50%;
+    float: right;
+    padding-top: 110px;
+}
+h2,h3,h1,h4,h5,h6{
+    margin: 0;
+    display: inline-block;
+}
+.frontCard, .backCard, .stdFront, .backstd{
+    width: 50%;
+    height: 250px;
+    display: inline-block;
+    border: 1px solid black;
+}
+.backCard{
+    margin: 30px 0 0 5px;
+    background-color: red;
+}
+.tab{
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px 0;
+    width: 100%;
+    max-width: 20%;
+    margin: -2px;
+}
+.downloadBtn, .resetBtn{
+    background-color: white;
+    border: 1px solid black;
+    width: 100%;
+    max-width: 15%;
+    padding: 10px 0;
+}
+.customDetails{
+    margin-top: 50px;
+    padding-left: 30px;
+}
+label.labelEmail{
+    padding-left: 12px;
+}
+label.labelLogo{
+    padding-left: 70px;
+}
+label.labelWeb{
+    padding-left: 55px;
+}
+label.labelFname{
+    padding-left: 40px;
+}
+label.labelDesignation{
+    padding-left: 30px;
+}
+.colorResetBtn{
+    padding: 5px 20px;
+    background: white;
+    border: 1px solid black;
+}
+.companyName{
+    width: 50%;
+    float: left;
+    text-align: center;
+    padding: 75px 0;
+    position: relative;
+}
+.companyDetails{
+    width: 47%;
+    float: right;
+    padding-top: 65px;
+}
+.companyLogo i{
+    font-size: 40px;
+    /* color: red; */
+}
+.line{
+    border: 1px solid lightgrey;
+    padding: 100px 0;
+    display: inline-block;
+    position: absolute;
+    margin-top: 30px;
+}
+.info .name{
+    padding-left: 10px;
+}
+.info{
+    padding: 30px 0 0 10px;
+}
+.info i{
+    font-size: 12px;
+    color: gray;
+}
+.btns{
+    padding: 30px 0 0 230px;
+}
+.mail, .web{
+    padding-top: 10px;
+}
+.bottom{
+    padding: 25px 229px;
+    background-color: tomato;
+    float: right;
+}
+.generate{
+    font-size: 14px;
+    text-align: center;
+    color: white;
+}
+.scan{
+    text-align: center;
+    padding-top: 40px;
+}
+.cleanArea{
+    background-color: white;
+}
+.scanStd{
+    padding: 8px 0 1px;
+}
+.stdDetail{
+    width: 50%;
+    float: right;
+}
+.iconTwo{
+    font-size: 50px !important;
+    padding: 2px 109px !important;
+}
+.stdDetail i{
+    font-size: 70px;
+    padding: 0 80px;
+    color: white;
+}
+.pb{
+    padding-bottom: 6px !important;
+}
+.standardFront{
+    width: 50%;
+    float: left;
+}
+.backstd{
+    text-align: center;
+}
+.name2{
+    padding-top: 30px;
+}
+.backcrd{
+    float: right;
+    width: 80%;
+}
+.bacck{
+    float: left;
+    width: 19%;
+    background-color: tomato;
+}
+.stdLogo i{
+    font-size: 30px;
+    padding-top: 5px;
+    float: right;
+}
+.bacck i{
+    font-size: 70px;
+    padding: 0 12px;
+    color: white;
+}
+.bacck .iconTwo{
+    padding: 2px 40px !important;
+}
+.bottom2{
+    padding: 28px 229px;
+    background-color: rgb(54, 11, 54);
+    float: right;
+}
+.standardFront, .stdDetail{
+    background-color: rgb(54, 11, 54);
+}
+.stdFront{
+    color: white;
+}
+
+
+/* .tabColor{
+    background-color: "cornflowerblue";
+    color: "black";
+}
+
+.rmTabColor{
+    background-color:white;
+} */

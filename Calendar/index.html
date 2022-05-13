@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./js/tak5_jquery.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="calendar_heading">
+            <h1>CALENDAR</h1>
+        </div>
+
+        <div class="month_strip">
+            <i class="fa-solid fa-square-caret-left back"></i>
+            <div class="month_year">
+                <h3></h3>
+            </div>
+            <i class="fa-solid fa-square-caret-right next"></i>
+        </div>
+        <div class="calendar">
+            <table class="table_data">
+                <thead>
+                    <tr>
+                        <th>SUN</th>
+                        <th>MON</th>
+                        <th>TUE</th>
+                        <th>WED</th>
+                        <th>THU</th>
+                        <th>FRI</th>
+                        <th>SAT</th>
+                    </tr>
+                </thead>
+                <tbody id="cal_dates"></tbody>
+            </table>
+        </div>
+        <div class="bottom">
+            <button id="today_btn">TODAY</button>
+            <select id="year_btn">
+            </select>
+            <select id="month_btn">
+            </select>
+            <select id="date_btn">
+                <option value="null">DATE</option>
+            </select>
+            <button id="find_btn">FIND DATE</button>
+        </div>
+    </div>
+</body>
+
+</html>
